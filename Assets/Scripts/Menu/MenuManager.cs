@@ -31,55 +31,82 @@ public class MenuButtonClickedArgs : EventArgs
 
 public class MenuManager : MonoBehaviour {
 
-    public MenuView _menuView;
+    public MenuView view;
 
-    public bool _isShowMenuPanel;
-
+    public bool isShowMenuPanel;
+    
     void Start ()
     {
         InitView();
-        _isShowMenuPanel = true;		
+        isShowMenuPanel = true;		
 	}
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (_isShowMenuPanel)
+            if (isShowMenuPanel)
                 HideMenuPanel();
             else
                 ShowMenuPanel();
 
-            _isShowMenuPanel = !_isShowMenuPanel;
+            isShowMenuPanel = !isShowMenuPanel;
         }
     }
 
 
     public void ShowMenuPanel()
     {
-        _menuView.ShowMenuPanel();
-        _isShowMenuPanel = true;
+        view.ShowMenuPanel();
+        isShowMenuPanel = true;
     }
     public void HideMenuPanel()
     {
-        _menuView.HideMenuPanel();
-        _isShowMenuPanel = false;
+        view.HideMenuPanel();
+        isShowMenuPanel = false;
     }
     public void ChangeTitlePanel(string _name)
     {
-        _menuView.ChangeTitlePanel(_name);
+        view.ChangeTitlePanel(_name);
     }
     
     private void InitView()
     {
-        _menuView.Init();
-        _menuView.OnMenuButtonClicked += _menuView_OnMenuButtonClicked;
-
+        view.Init();
+        view.OnMenuButtonClicked += _view_OnMenuButtonClicked;
+        view.OnOpenIndicatorClicked += _view_OnOpenIndicatorClicked;
         ChangeTitlePanel(MenuNames.Main.ToString());
     }
 
-    private void _menuView_OnMenuButtonClicked(object sender, MenuButtonClickedArgs e)
+    private void _view_OnOpenIndicatorClicked(object sender, EventArgs e)
+    {
+        ShowMenuPanel();
+        view.HideOpenIndicator();
+    }
+    private void _view_OnMenuButtonClicked(object sender, MenuButtonClickedArgs e)
     {
         HideMenuPanel();
+        view.ShowOpenIndicator();
+
+        switch (e._clickedMenu)
+        {
+            case MenuNames.Main:
+                break;
+            case MenuNames.Talent:
+                break;
+            case MenuNames.Orc:
+                PlayerManager.Inst.ShowPlayerOrc();
+                break;
+            case MenuNames.Item:
+                break;
+            case MenuNames.Area:
+                AreaManager.Inst.ShowArea();
+                break;
+            case MenuNames.Store:
+                break;
+            default:
+                break;
+        }
+
     }
 }

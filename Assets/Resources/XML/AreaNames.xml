@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="AreaNames.xsd" generated="2017-11-16T17:08:42">
+<AreaNames>
+<ID>1</ID>
+<AreaName>지역1</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>2</ID>
+<AreaName>지역2</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>3</ID>
+<AreaName>지역3</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>4</ID>
+<AreaName>지역4</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>5</ID>
+<AreaName>지역5</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>6</ID>
+<AreaName>지역6</AreaName>
+</AreaNames>
+<AreaNames>
+<ID>7</ID>
+<AreaName>지역7</AreaName>
+</AreaNames>
+</dataroot>

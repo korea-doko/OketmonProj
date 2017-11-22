@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="RankType.xsd" generated="2017-11-18T13:56:10">
+<RankType>
+<ID>1</ID>
+<GivenID>0</GivenID>
+<Type>Normal</Type>
+</RankType>
+<RankType>
+<ID>2</ID>
+<GivenID>1</GivenID>
+<Type>Elite</Type>
+</RankType>
+<RankType>
+<ID>3</ID>
+<GivenID>2</GivenID>
+<Type>Chief</Type>
+</RankType>
+<RankType>
+<ID>4</ID>
+<GivenID>3</GivenID>
+<Type>Overlord</Type>
+</RankType>
+<RankType>
+<ID>5</ID>
+<GivenID>4</GivenID>
+<Type>Legend</Type>
+</RankType>
+</dataroot>

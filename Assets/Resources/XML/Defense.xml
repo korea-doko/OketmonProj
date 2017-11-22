@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Defense.xsd" generated="2017-11-18T14:31:38">
+<Defense>
+<ID>1</ID>
+<Type>1</Type>
+<KoreanName>저항없음</KoreanName>
+<Desc>모든 공격에 상처를 입습니다.</Desc>
+</Defense>
+<Defense>
+<ID>2</ID>
+<Type>2</Type>
+<KoreanName>물리면역</KoreanName>
+<Desc>물리 공격에 면역입니다.</Desc>
+</Defense>
+<Defense>
+<ID>3</ID>
+<Type>3</Type>
+<KoreanName>독면역</KoreanName>
+<Desc>독 공격에 면역입니다.</Desc>
+</Defense>
+<Defense>
+<ID>4</ID>
+<Type>4</Type>
+<KoreanName>화염면역</KoreanName>
+<Desc>화염 공격에 면역입니다.</Desc>
+</Defense>
+<Defense>
+<ID>5</ID>
+<Type>5</Type>
+<KoreanName>저주면역</KoreanName>
+<Desc>저주 공격에 면역입니다.</Desc>
+</Defense>
+<Defense>
+<ID>6</ID>
+<Type>6</Type>
+<KoreanName>얼음면역</KoreanName>
+<Desc>얼음 공격에 면역입니다.</Desc>
+</Defense>
+<Defense>
+<ID>7</ID>
+<Type>7</Type>
+<KoreanName>번개면역</KoreanName>
+<Desc>번개 공격에 면역입니다.</Desc>
+</Defense>
+</dataroot>

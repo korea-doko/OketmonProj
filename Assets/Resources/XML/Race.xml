@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Race.xsd" generated="2017-11-17T15:28:33">
+<Race>
+<ID>1</ID>
+<Type>1</Type>
+<KoreanName>부족없음</KoreanName>
+<Desc>부족이 없는 떠돌이입니다.</Desc>
+</Race>
+<Race>
+<ID>2</ID>
+<Type>2</Type>
+<KoreanName>검은 돌</KoreanName>
+<Desc>검은 돌 부족은 검은 돌로 이루어진 산맥에 거주하고 있습니다.</Desc>
+</Race>
+<Race>
+<ID>3</ID>
+<Type>3</Type>
+<KoreanName>전쟁노래</KoreanName>
+<Desc>전쟁 노래 부족은 노래를 잘 부릅니다.</Desc>
+</Race>
+<Race>
+<ID>4</ID>
+<Type>4</Type>
+<KoreanName>서리이빨</KoreanName>
+<Desc>서리 이빨 부족은 추운 지방에서 살고 있습니다.</Desc>
+</Race>
+<Race>
+<ID>5</ID>
+<Type>5</Type>
+<KoreanName>검은 달</KoreanName>
+<Desc>검은 달 부족은 어둠 속에서 밝게 빛나는 눈을 가지고 있습니다.</Desc>
+</Race>
+<Race>
+<ID>6</ID>
+<Type>6</Type>
+<KoreanName>피 눈물</KoreanName>
+<Desc>피 눈물 부족은 붉은 눈물을 흘립니다.</Desc>
+</Race>
+<Race>
+<ID>7</ID>
+<Type>7</Type>
+<KoreanName>부서진 손</KoreanName>
+<Desc>부서진 손 부족은 강력한 힘으로 상대방을 압도합니다.</Desc>
+</Race>
+<Race>
+<ID>8</ID>
+<Type>8</Type>
+<KoreanName>용사냥</KoreanName>
+<Desc>용사냥 부족은 거대한 용도 사냥할 수 있습니다.</Desc>
+</Race>
+<Race>
+<ID>9</ID>
+<Type>11</Type>
+<KoreanName>해골분쇄</KoreanName>
+<Desc>해골 분쇄 부족은 상대방을 죽이고 그 머리 뼈를 전리품으로 챙깁니다.</Desc>
+</Race>
+</dataroot>

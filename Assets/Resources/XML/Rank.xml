@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Rank.xsd" generated="2017-11-18T13:56:02">
+<Rank>
+<ID>1</ID>
+<Type>1</Type>
+<KoreanName>일반</KoreanName>
+<Desc>일반 등급입니다.</Desc>
+</Rank>
+<Rank>
+<ID>2</ID>
+<Type>2</Type>
+<KoreanName>정예</KoreanName>
+<Desc>정예 등급입니다.</Desc>
+</Rank>
+<Rank>
+<ID>3</ID>
+<Type>3</Type>
+<KoreanName>족장</KoreanName>
+<Desc>족장 등급입니다.</Desc>
+</Rank>
+<Rank>
+<ID>4</ID>
+<Type>4</Type>
+<KoreanName>군주</KoreanName>
+<Desc>군주 등급입니다.</Desc>
+</Rank>
+<Rank>
+<ID>5</ID>
+<Type>5</Type>
+<KoreanName>전설</KoreanName>
+<Desc>전설 등급입니다.</Desc>
+</Rank>
+</dataroot>

@@ -8,6 +8,7 @@ using UnityEngine;
 public interface IMenuView
 {
     event EventHandler<MenuButtonClickedArgs> OnMenuButtonClicked;
+    event EventHandler OnOpenIndicatorClicked;
 }
 public class MenuView : MonoBehaviour,IMenuView {
 
@@ -17,6 +18,7 @@ public class MenuView : MonoBehaviour,IMenuView {
 
 
     public event EventHandler<MenuButtonClickedArgs> OnMenuButtonClicked;
+    public event EventHandler OnOpenIndicatorClicked;
 
     internal void Init()
     {
@@ -25,8 +27,10 @@ public class MenuView : MonoBehaviour,IMenuView {
         _titlePanel.Init();
 
         _openIndicatorPanel.Init();
+        _openIndicatorPanel.OnOpenIndicatorClicked += _openIndicatorPanel_OnOpenIndicatorClicked;
     }
 
+   
     internal void ShowMenuPanel()
     {
         _menuPanel.Show();       
@@ -39,6 +43,14 @@ public class MenuView : MonoBehaviour,IMenuView {
     {
         _titlePanel.ChangeTitle(name);
     }
+    internal void ShowOpenIndicator()
+    {
+        _openIndicatorPanel.Show();
+    }
+    internal void HideOpenIndicator()
+    {
+        _openIndicatorPanel.Hide();
+    }
     private void InitMenuPanel()
     {
         _menuPanel.Init();
@@ -48,6 +60,10 @@ public class MenuView : MonoBehaviour,IMenuView {
     private void _menuPanel_OnMenuButtonClicked(object sender, MenuButtonClickedArgs e)
     {
         OnMenuButtonClicked(this, e);
+    }
+    private void _openIndicatorPanel_OnOpenIndicatorClicked(object sender, EventArgs e)
+    {
+        OnOpenIndicatorClicked(this, e);
     }
 
     
