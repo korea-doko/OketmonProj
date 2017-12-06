@@ -5,9 +5,17 @@ using UnityEngine;
 
 public class PlayerModel : MonoBehaviour
 {
-    public List<OrcData> playerOrcList;
+    private List<OrcData> playerOrcList;
 
-	
+    public List<OrcData> PlayerOrcList
+    {
+        get
+        {
+            return playerOrcList;
+        }
+ 
+    }
+
     internal void Init()
     {
         playerOrcList = new List<OrcData>();

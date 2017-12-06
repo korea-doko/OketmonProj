@@ -16,7 +16,7 @@ public class PlayerView : MonoBehaviour {
 
     internal void ShowPlayerOrc(PlayerModel model)
     {
-        List<OrcData> orcList = model.playerOrcList;
+        List<OrcData> orcList = model.PlayerOrcList;
 
         playerOrcPanelContainer.Show(orcList);
     }

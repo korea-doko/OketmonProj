@@ -18,6 +18,13 @@ public class OrcGenerator : MonoBehaviour {
         inst = this;
     }
 
+    [SerializeField] private int nextOrcID;
+
+    private void Start()
+    {
+        nextOrcID = 0;
+    }
+
     public OrcData GenOrcData()
     {
         int randomRank = UnityEngine.Random.Range(0, 5);
@@ -64,21 +71,29 @@ public class OrcGenerator : MonoBehaviour {
                 break;
         }
 
-     
-        AttackType[] attackTypeAry = new AttackType[1];
+
+        OrcData orcData = new OrcData(nextOrcID++, randOrcName, raceType, rankType, classType);
+
+        int randNumOfAtkType = UnityEngine.Random.Range(1, 4);
         List<AttackType> atkList = DataLoadManager.Inst.GetAttackTypeList();
-        int randAttackTypeIndex = UnityEngine.Random.Range(0, atkList.Count);
-        attackTypeAry[0] = atkList[randAttackTypeIndex];
+        for(int i = 0; i < randNumOfAtkType;i++)
+        {
+            int rand = UnityEngine.Random.Range(0, atkList.Count);
+            AttackType atkType = atkList[rand];
+            orcData.SetAttackTypeList(atkType);
+        }
 
 
-        DefenseType[] defenseTypeAry = new DefenseType[1];
+
+        int randNumOfDefType = UnityEngine.Random.Range(1, 4);       
         List<DefenseType> defList = DataLoadManager.Inst.GetDefenseTypeList();
-        int randDefenseTypeIndex = UnityEngine.Random.Range(0, defList.Count);
-        defenseTypeAry[0] = defList[randDefenseTypeIndex];
-
+        for(int i = 0; i < randNumOfDefType;i++)
+        {
+            int rand = UnityEngine.Random.Range(0, defList.Count);
+            DefenseType defType = defList[rand];
+            orcData.SetDefenseTypeList(defType);
+        }
         
-        OrcData orcData = new OrcData(randOrcName, raceType,rankType,classType,attackTypeAry,defenseTypeAry);
-
         return orcData;
     }
 }

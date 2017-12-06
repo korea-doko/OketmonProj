@@ -16,9 +16,17 @@ public class AreaData  {
         subAreaList = new List<SubAreaData>();
         this.areaName = areaName;
         int rand = Random.Range(minNumOfSubArea, maxNumOfSubArea);
+
+        List<WeatherType> weatherList = DataLoadManager.Inst.GetWeatherTypeList();
+        
+
         for (int i = 0; i < rand; i++)
         {
-            SubAreaData sub = new SubAreaData(areaName, i);
+            int randomWeatherIndex = UnityEngine.Random.Range(0, weatherList.Count);
+
+            WeatherType randWeather = weatherList[randomWeatherIndex]; 
+
+            SubAreaData sub = new SubAreaData(areaName, i,randWeather);
             subAreaList.Add(sub);
         }
     }

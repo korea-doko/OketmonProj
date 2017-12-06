@@ -19,7 +19,6 @@ public class DataLoadManager : MonoBehaviour
     {
         inst = this;
     }
-
     
     public List<AreaName> GetAreaNameList()
     {
@@ -48,5 +47,9 @@ public class DataLoadManager : MonoBehaviour
     public List<DefenseType> GetDefenseTypeList()
     {
         return model.DefenseTypeModel.DefenseList;
+    }
+    public List<WeatherType> GetWeatherTypeList()
+    {
+        return model.WeatherTypeModel.WeatherList;
     }
 }

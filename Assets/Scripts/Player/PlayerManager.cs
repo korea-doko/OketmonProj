@@ -38,4 +38,8 @@ public class PlayerManager : MonoBehaviour {
     {
         view.ShowPlayerOrc(model);
     }
+    internal List<OrcData> GetOrcDataList()
+    {
+        return model.PlayerOrcList;
+    }
 }

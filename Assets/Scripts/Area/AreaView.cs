@@ -8,6 +8,9 @@ public interface IAreaView
 {
     event EventHandler<AreaPanelClickedArgs> OnAreaPanelClicked;
     event EventHandler<SubAreaPanelClickedArgs> OnSubAreaPanelClicked;
+    event EventHandler<SubAreaPlayerOrcPanelArgs> OnSubAreaPlayerOrcPanelClicked;
+    event EventHandler<SubAreaPlayerOrcSelectPanelArgs> OnSubAreaPlayerOrcSelectPanelClicked;
+    event EventHandler OnSubAreaDetailPanelExcuteButtonClicked;
 }
 
 public class AreaView : MonoBehaviour, IAreaView {
@@ -18,6 +21,9 @@ public class AreaView : MonoBehaviour, IAreaView {
 
     public event EventHandler<AreaPanelClickedArgs> OnAreaPanelClicked;
     public event EventHandler<SubAreaPanelClickedArgs> OnSubAreaPanelClicked;
+    public event EventHandler<SubAreaPlayerOrcPanelArgs> OnSubAreaPlayerOrcPanelClicked;
+    public event EventHandler<SubAreaPlayerOrcSelectPanelArgs> OnSubAreaPlayerOrcSelectPanelClicked;
+    public event EventHandler OnSubAreaDetailPanelExcuteButtonClicked;
 
     internal void Init(int numOfCurArea, int maxNumOfSubArea)
     {
@@ -26,21 +32,18 @@ public class AreaView : MonoBehaviour, IAreaView {
 
         subAreaContainer.Init(maxNumOfSubArea);
         subAreaContainer.OnSubAreaPanelClicked += SubAreaContainer_OnSubAreaPanelClicked;
+        subAreaContainer.OnSubAreaPlayerOrcPanelClicked += SubAreaContainer_OnSubAreaPlayerOrcPanelClicked;
+        subAreaContainer.OnSubAreaPlayerOrcSelectPanelClicked += SubAreaContainer_OnSubAreaPlayerOrcSelectPanelClicked;
+        subAreaContainer.OnSubAreaDetailPanelExcuteButtonClicked += SubAreaContainer_OnSubAreaDetailPanelExcuteButtonClicked;
     }
 
-   
-
-    internal void ShowArea(AreaModel model)
+    private void SubAreaContainer_OnSubAreaDetailPanelExcuteButtonClicked(object sender, EventArgs e)
     {
-        areaContainer.Show();
+        OnSubAreaDetailPanelExcuteButtonClicked(this, e);
     }
-    internal void HideArea()
+    private void SubAreaContainer_OnSubAreaPlayerOrcSelectPanelClicked(object sender, SubAreaPlayerOrcSelectPanelArgs e)
     {
-        areaContainer.Hide();
-    }
-    internal void ShowSubArea(AreaData areaData)
-    {
-        subAreaContainer.Show(areaData.SubAreaList);
+        OnSubAreaPlayerOrcSelectPanelClicked(this, e);
     }
     private void AreaContainer_OnAreaPanelClicked(object sender, AreaPanelClickedArgs e)
     {
@@ -50,9 +53,33 @@ public class AreaView : MonoBehaviour, IAreaView {
     {
         OnSubAreaPanelClicked(this, e);
     }
+    private void SubAreaContainer_OnSubAreaPlayerOrcPanelClicked(object sender, SubAreaPlayerOrcPanelArgs e)
+    {
+        OnSubAreaPlayerOrcPanelClicked(this, e);
+    }
 
+    internal void ShowArea(AreaModel model)
+    {
+        areaContainer.Show();
+    }
+    internal void HideSubAreaPlayerOrcSelectPanel()
+    {
+        subAreaContainer.HideSubAreaPlayerOrcSelectPanel();
+    }
+    internal void HideArea()
+    {
+        areaContainer.Hide();
+    }
+    internal void ShowSubArea(AreaData areaData)
+    {
+        subAreaContainer.Show(areaData.SubAreaList);
+    }
     internal void ShowSubAreaDetailPanel(SubAreaData subAreaData)
     {
         subAreaContainer.ShowSubAreaDetailPanel(subAreaData);
+    }   
+    internal void ShowSubAreaPlayerOrcSelectContainer(List<OrcData> playerOrcDataList)
+    {
+        subAreaContainer.ShowSubAreaPlayerOrcSelectContainer(playerOrcDataList);
     }
 }

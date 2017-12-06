@@ -15,6 +15,8 @@ public class DataLoadModel : MonoBehaviour
     [SerializeField] private RaceTypeModel raceTypeModel;
     [SerializeField] private OrcNameModel orcNameModel;
     [SerializeField] private AreaNameModel areaNameModel;
+    //[SerializeField] private AreaTypeModel areaTypeModel;
+    [SerializeField] private WeatherTypeModel weatherTypeModel;
 
     public AreaNameModel AreaNameModel
     {
@@ -67,6 +69,15 @@ public class DataLoadModel : MonoBehaviour
         }
 
     }
+    public WeatherTypeModel WeatherTypeModel
+    {
+        get
+        {
+            return weatherTypeModel;
+        }
+
+     
+    }
 
     public void Awake()
     {
@@ -91,6 +102,11 @@ public class DataLoadModel : MonoBehaviour
 
         classTypeModel = new ClassTypeModel();
         classTypeModel.Init();
+
+        weatherTypeModel = new WeatherTypeModel();
+        weatherTypeModel.Init();
+        //areaTypeModel = new AreaTypeModel();
+        //areaTypeModel.Init();
     }
 
 

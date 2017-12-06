@@ -34,7 +34,8 @@ public class SubAreaPanel : MonoBehaviour , ISubAreaPanel{
     }
     internal void Show(SubAreaData subAreaData)
     {
-        terrainText.text = subAreaData.AreaName.name +"_"+ subAreaData.Number.ToString();
+        terrainText.text = subAreaData.AreaName.name +"_"+ subAreaData.Number.ToString() + "\n" +
+            "날씨 : " + subAreaData.WeatherType.KoreanName;
         this.gameObject.SetActive(true);
     }
     internal void Hide()

@@ -9,22 +9,23 @@ public class SubAreaData {
     [SerializeField] private AreaName areaName;
     [SerializeField] private int number;
 
+    [SerializeField] private WeatherType weatherType;
+    
     [SerializeField] private List<OrcData> enemyOrcList;
-
     [SerializeField] private int limitNumOfPlayerOrc;
-    [SerializeField] private List<OrcData> playerOrcList;
-
+    [SerializeField] private OrcData[] playerOrcAry;
+    
     public SubAreaData(AreaName areaName, int i)
     {
         enemyOrcList = new List<OrcData>();
-        playerOrcList = new List<OrcData>();
-
-       
+              
         int maxNumOfOrc = 3;
 
         int numOrc = UnityEngine.Random.Range(1, maxNumOfOrc + 1);
         limitNumOfPlayerOrc = UnityEngine.Random.Range(1, maxNumOfOrc + 1);
 
+        playerOrcAry = new OrcData[limitNumOfPlayerOrc];
+          
         for (int num = 0; num < numOrc; num++)
         {
             OrcData data = OrcGenerator.Inst.GenOrcData();
@@ -34,7 +35,32 @@ public class SubAreaData {
         this.areaName = areaName;
         this.number = i;
     }
+    public SubAreaData(AreaName areaName, int i, WeatherType randWeather) : this(areaName, i)
+    {
+        this.weatherType = randWeather;        
+    }
 
+    public void AddPlayerOrcData(int index,OrcData data)
+    {
+        if (index >= limitNumOfPlayerOrc)
+            Debug.Log("에러");
+       
+        for(int i = 0; i < limitNumOfPlayerOrc;i++)
+        {
+            OrcData od = playerOrcAry[i];
+
+            if (od == null)
+                continue;
+
+            if( od.genID == data.genID)
+            {
+                playerOrcAry[i] = null;
+                break;
+            }
+        }
+
+        playerOrcAry[index] = data;
+    }
 
     public AreaName AreaName
     {
@@ -64,11 +90,18 @@ public class SubAreaData {
             return limitNumOfPlayerOrc;
         }
     }
-    public List<OrcData> PlayerOrcList
+    public OrcData[] PlayerOrcAry
     {
         get
         {
-            return playerOrcList;
+            return playerOrcAry;
+        }
+    }
+    public WeatherType WeatherType
+    {
+        get
+        {
+            return weatherType;
         }
     }
 }
